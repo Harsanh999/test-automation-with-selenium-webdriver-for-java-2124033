@@ -1,19 +1,15 @@
-package setup;
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+# Create a new Chrome browser instance
+driver = webdriver.Chrome()
 
-import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
+# Open a webpage
+driver.get("https://www.example.com")
 
-public class Main {
+# Example: Find an element and print its text
+element = driver.find_element(By.TAG_NAME, "h1")
+print(element.text)
 
-
-  static {
-
-  }
-
-  public static void main(String[] args) {
-
-  }
-}
+# Close the browser
+driver.quit()
